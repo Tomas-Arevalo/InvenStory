@@ -4,6 +4,9 @@ CS50 Final Project
 Fall 2021
 Documentation
 
+Overview: Inventory management API integration using pandas data pipeline
+Link: https://youtu.be/XzXVqcy3ByE
+
 Accessing Our Project
 To run our code and be able to access our website you must first download pandas—a software library written for python which we used to transfer data from the Vend API to the database.
 
@@ -52,7 +55,7 @@ After clicking on the Refresh button in the NAVbar you will then be brought to t
 
 API_load.py and update_db
 
-Vend is the point of sale (POS) software we use at the Harvard Shop. It stores our inventory counts, sales data, and history of supplier orders (orders to get more inventory from suppliers). All of our raw data used in the project was pulled from the Vend API. Our functions for doing this can be found in the file API_load.py
+Vend, now called LightSpeed, is the point of sale (POS) software we use at the Harvard Shop. It stores our inventory counts, sales data, and history of supplier orders (orders to get more inventory from suppliers). All of our raw data used in the project was pulled from the Vend API. Our functions for doing this can be found in the file API_load.py
 
 We will do our best to explain the elements of the Vend API that we used in our project, but if you have any other questions about the schema of the API, please take a look at: https://docs.vendhq.com/reference/introduction 
 
@@ -169,9 +172,6 @@ for requests that take up more than one page - vend sets limits on page_size (th
 API_load
 
 To save time, memory, and lines of code, we did not transfer all fields into the pandas dataframe. We selected ones that we knew we would need 
-
-Link
-https://youtu.be/XzXVqcy3ByE
 
 
 
