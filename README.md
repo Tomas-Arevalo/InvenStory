@@ -5,6 +5,7 @@ Fall 2021
 Documentation
 
 Overview: Inventory management API integration using pandas data pipeline
+
 Link: https://youtu.be/XzXVqcy3ByE
 
 Accessing Our Project
