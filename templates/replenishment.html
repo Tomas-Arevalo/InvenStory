@@ -1,0 +1,65 @@
+{% extends "homepage.html" %}
+
+{% block title %}
+    Replenishment
+{% endblock %}
+
+{% block main %}
+<body>
+    <div class="container">
+        <div class="rounded">
+        <h4>Create Your Replenishment Report</h4>
+            <form action="/replenishment" method="post">
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="merge" name="merge">
+                    <label class="custom-control-label" for="merge">Merge Product Variants</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="upload" name="refresh">
+                    <label class="custom-control-label" for="refresh">Refresh Data (Results in longer load time)</label>
+                </div>
+                <div class="row" style="padding-top: 30px;">
+                    <button class="btn btn-primary" class="click" type="submit">Generate Report</button>
+                </div>
+            </form>
+        </div>
+        {% if data %}
+            <div class="container" style="padding-top: 80px; color:white;">
+                <h1>Replenishment Information</h1>
+            </div>
+            <table class="table">
+                <tr class="header">
+                    <th class="widerow">Name</td>
+                    <th>Sku</th>
+                    <th>Supplier</th>
+                    <th>Total Inventory</th>
+                    <th>Sold Per Day</th>
+                    <th>Lead Time</th>
+                    <th>Days Covered</th>
+                    <th>Days Until Reorder</th>
+                    <th>Actions</th>
+                    <th></th>
+                </tr>
+            {% for row in data %}
+                <tr>
+                    <td class="widerow">{{ row['name']}}</td>
+                    <td>{{ row['sku'] }}</td>
+                    <td>{{ row['supplier'] }}</td>
+                    <td>{{ row['total_inventory'] }}</td>
+                    <td>{{ "{:,.2f}".format(row['sold_per_day']) }}</td>
+                    <td>{{ row['lead_time'] }}</td>
+                    <td>{{ row['days_covered'] }}</td>
+                    <td>{{ row['days_until_reorder'] }}</td>
+                    <td>
+                        <form action="/remove_replenishment" method="post">
+                            <button class="btn btn-primary" class="click" type="submit">Remove</button>
+                            <input type = "hidden" id="id" name="id" value='{{ row["id"] }}'/>
+                            <input type = "hidden" id="name" name="name" value='{{row["name"] }}'/>
+                        </form>
+                </tr>
+            {% endfor %}
+            </table>
+        {% endif %}
+        </div>
+</div>
+{% endblock %}

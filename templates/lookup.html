@@ -1,0 +1,115 @@
+{% extends "homepage.html" %}
+
+{% block title %}
+    Look Up
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <form action="/lookup" method="post">
+        <div class="rounded">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="base_name" placeholder="Base Name" type="text">
+            <p class="fallbackLabel" ><br>Enter Start Date (Optional):</p>
+            <div class="fallbackDatePicker">
+                <span>
+                    <label for="start_month">Month:</label>
+                    <select name="start_month">
+                        {% for i in range(1,13) %}
+                        {% if i < 10 %}
+                        <option>0{{i}}</option>
+                        {% else %}
+                        <option>{{i}}</option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                </span>
+                <span>
+                    <label for="start_day">Day:</label>
+                    <select name="start_day">
+                        {% for i in range(1,32) %}
+                        {% if i < 10 %}
+                        <option>0{{i}}</option>
+                        {% else %}
+                        <option>{{i}}</option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                </span>
+                <span>
+                    <label for="start_year">Year:</label>
+                    <select name="start_year">
+                        {% for i in range (2021, 2018, -1) %}
+                        <option>{{i}}</option>
+                        {% endfor %}
+                    </select>
+                </span>
+                </div>
+                <p class="fallbackLabel" ><br>Enter End Date (Optional):</p>
+                <div class="fallbackDatePicker">
+                <span>
+                    <label for="end_month">Month:</label>
+                    <select name="end_month">
+                        {% for i in range(1,13) %}
+                        {% if i < 10 %}
+                        <option>0{{i}}</option>
+                        {% else %}
+                        <option>{{i}}</option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                </span>
+                <span>
+                    <label for="end_day">Day:</label>
+                    <select name="end_day">
+                        {% for i in range(1,32) %}
+                        {% if i < 10 %}
+                        <option>0{{i}}</option>
+                        {% else %}
+                        <option>{{i}}</option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                </span>
+                <span>
+                    <label for="end_year">Year:</label>
+                    <select name="end_year">
+                        {% for i in range (2021, 2018, -1) %}
+                        <option>{{i}}</option>
+                        {% endfor %}
+                    </select>
+                </span>
+                </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Look Up</button>
+    </form>
+    {% if products and length and sold_per_day_list %}
+        <table class="table">
+            <thead>
+            <th>Product Name</th>
+            <th>Sku</th>
+            <th>Supplier</th>
+            <th>Basement Inventory</th>
+            <th>MTA Inventory</th>
+            <th>Garage Inventory</th>
+            <th>JFK Inventory</th>
+            <th>Sold per Day</th>
+            </thead>
+            <tbody>
+            {% for product in range(length) %}
+            <tr>
+                <td>{{products[product].name}}</td>
+                <td>{{products[product].sku}}</td>
+                <td>{{products[product].supplier}}</td>
+                <td>{{products[product].inventory_basement}}</td>
+                <td>{{products[product].inventory_mta}}</td>
+                <td>{{products[product].inventory_garage}}</td>
+                <td>{{products[product].inventory_jfk}}</td>
+                <td>{{"{:,.2f}".format(sold_per_day_list[product])}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+</div>
+    {% endif %}
+
+{% endblock %}

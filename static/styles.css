@@ -1,0 +1,181 @@
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+.container {
+    max-width: 50vw;
+    min-width: 1200px;
+}
+
+.rounded {
+    opacity: 0.7;
+    max-width: 40vw;
+    min-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius:40px;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.rounded:hover {
+    opacity: 0.95;
+    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+button.btn-primary {
+    max-width: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    vertical-align:middle;
+    background-color: #d22eff;
+    border-color: #bb1ee6;
+}
+
+button.btn-primary:hover {
+    background-color: #9718ba;
+    border-color: #9718ba;
+    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 5px;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px:
+}
+
+h1 {
+    font-weight: 700;
+}
+
+h4 {
+    font-weight: 700;
+}
+
+.header {
+    background-color: #b449f2;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2em
+}
+
+.header:hover{
+    color: #b449f2;
+    transition: color 0.2s ease-in-out;
+}
+
+tr {
+    background-color: #f9edff;
+    height: 6vh;
+    vertical-align: middle;
+}
+
+td {
+    padding: 20px;
+    width: auto;
+    vertical-align: middle;
+}
+
+/* Round corners for first and last element of each row */
+td:first-child, th:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+td:last-child, th:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+td.widerow {
+    max-width: 300px;
+}
+
+tr:hover {
+    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    height: 9vh;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #b449f2;
+    transition: box-shadow 0.1s ease-in-out, height 0.3s ease-in-out, background-color 0.1s ease-in-out;
+}
+
+th {
+    height: 8vh;
+    vertical-align: middle;
+}
+
+th:hover {
+    height: 8vh;
+}
+
+label {
+    padding-left: 10px;
+}
+
+body {
+    background: linear-gradient(-45deg, #e63964, #de5959, #d10a81, #de6f59);
+    background-size: 400% 800%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+}
+
+input {
+    margin-top: 10px;
+}
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+    background-position: 0% 50%;
+    }
+}
+
+
+*{
+    box-sizing: border-box;
+  }
+  
+  /* Create a two-column layout */
+  .column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }

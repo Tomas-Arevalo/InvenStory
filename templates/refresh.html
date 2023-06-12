@@ -1,0 +1,46 @@
+{% extends "homepage.html" %}
+
+{% block title %}
+    Replenishment
+{% endblock %}
+
+{% block main %}
+<body>
+    <div class="container">
+        <div class="rounded">
+        <h4>Choose Which Table to update</h4>
+        <p>We Recommend Only Updating 1 or 2 Tables at a Time</p>
+        <p>Once you have clicked refresh, please wait a few minutes to be redirected to the dashboard.</p>
+            <form action="/refresh" method="post">
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="products" name="products">
+                    <label class="custom-control-label" for="products">Products</label>
+                    <p>For when you have created new products</p>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="suppliers" name="suppliers">
+                    <label class="custom-control-label" for="suppliers">Suppliers</label>
+                    <p>For when you have ordered from a new supplier</p>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="sales" name="sales">
+                    <label class="custom-control-label" for="sales">Sales</label>
+                    <p>Update every now and then (sales data takes the longest)</p>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="orders" name="orders">
+                    <label class="custom-control-label" for="orders">Orders</label>
+                    <p>For when you have new orders placed that you need tracked</p>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="replenishment" name="replenishment">
+                    <label class="custom-control-label" for="replenishment">Refresh Replenishment Table</label>
+                </div>
+                <div class="row" style="padding-top: 30px;">
+                    <button class="btn btn-primary" class="click" type="submit">Refresh</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+{% endblock %}

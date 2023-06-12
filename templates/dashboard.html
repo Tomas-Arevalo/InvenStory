@@ -1,0 +1,64 @@
+{% extends "homepage.html" %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block main %}
+
+{% if report and best %}
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <h1 style="color:white;">Order these soon!</h1>
+            <table class="table">
+                <tr class="header">
+                    <th class="widerow">Name</td>
+                    <th>Supplier</th>
+                    <th>Total Inventory</th>
+                    <th>Days Until Reorder</th>
+                    <th>Actions</td>
+                </tr>
+                {% for row in report %}
+                    <tr>
+                        <td class="widerow">{{ row['name']}}</td>
+                        <td>{{ row['supplier'] }}</td>
+                        <td>{{ row['total_inventory'] }}</td>
+                        <td>{{ row['days_until_reorder'] }}</td>
+                        <td>
+                            <form action="/remove_replenishment" method="post">
+                                <button class="btn btn-primary" class="click" type="submit">Remove</button>
+                                <input type = "hidden" id="id" name="id" value='{{ row["id"] }}'/>
+                                <input type = "hidden" id="merge" name="merge" value='{{ "/" in row["name"] }}'/>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="column">
+            <h1 style="color:white;">Best Selling Products</h1>
+            <table class="table">
+                <tr class="header">
+                    <th class="widerow">Name</td>
+                    <th>SKU</th>
+                    <th>Supplier</th>
+                    <th>Total Inventory</th>
+                    <th>Sold Per Day</th>
+                </tr>
+                {% for row in best %}
+                    <tr>
+                        <td class="widerow">{{ row['name']}}</td>
+                        <td>{{ row['sku'] }}</td>
+                        <td>{{ row['supplier'] }}</td>
+                        <td>{{ row['total_inventory'] }}</td>
+                        <td>{{ row['sold_per_day'] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+</div>
+
+{% endif %}
+
+{% endblock %}
