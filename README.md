@@ -1,7 +1,7 @@
-Tomas Arevalo\\
-Thomas Garity\\
-CS50 Final Project\\
-Fall 2021\\
+Tomas Arevalo\
+Thomas Garity\
+CS50 Final Project\
+Fall 2021\
 Documentation
 
 Overview: Inventory management API integration using pandas data pipeline
