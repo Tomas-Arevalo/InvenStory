@@ -6,7 +6,7 @@ Documentation
 
 Overview: Inventory management API integration using pandas data pipeline
 
-Link: https://youtu.be/XzXVqcy3ByE
+Project Explanation: https://youtu.be/XzXVqcy3ByE
 
 Accessing Our Project
 To run our code and be able to access our website you must first download pandas—a software library written for python which we used to transfer data from the Vend API to the database.
