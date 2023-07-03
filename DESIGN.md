@@ -2,7 +2,7 @@ Tomas Arevalo\
 Thomas Garity\
 CS50 Final Project\
 Fall 2021\
-Design\
+Design
 
 What is Our Project
 
